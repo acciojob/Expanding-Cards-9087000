@@ -1,85 +1,37 @@
-* {
-  box-sizing: border-box;
+/*  your css code here. If applicable */
+*{
+	height:10vh;
+	margin-top:50px;
 }
 
-body {
-  font-family: sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  background-color: rgb(5, 5, 5);
-  color: #fff;
+.container{
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+}
+.panel img{
+	width:10vh;
+	height: 40vh;
+	object-fit:cover;
+	margin:10px;
+	border-radius:20px;
+	cursor:pointer;
+	transition: width 0.5s ;
 }
 
-.container {
-  display: flex;
-  width: 100vw;
+.active img{
+	width:50vh;
 }
 
-.bg-image {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.img-text{
+	opacity:0;
 }
 
-/* IMAGES SOURCES  */
-/* https://wallpapercave.com/pc-games-wallpapers  */
-
-.image-1 {
-  background-image: url(https://wallpapercave.com/dwp2x/wp3163455.jpg);
+.active .img-text{
+	opacity:1;
 }
 
-.image-2 {
-  background-image: url(https://wallpapercave.com/dwp2x/wp3163465.jpg);
+#panel-2.active{
+	
 }
 
-.image-3 {
-  background-image: url(https://wallpapercave.com/dwp2x/wp4257699.jpg);
-}
-
-.image-4 {
-  background-image: url(https://wallpapercave.com/dwp2x/wp4257708.jpg);
-}
-
-.image-5 {
-  background-image: url(https://wallpapercave.com/dwp2x/wp3163453.jpg);
-}
-
-.slide {
-  position: relative;
-  height: 80vh;
-  flex: 0.5;
-  border-radius: 50px;
-  color: #fff;
-  margin: 10px;
-  cursor: pointer;
-  transition: all 700ms ease-in;
-}
-
-.slide h3 {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  margin: 0;
-  opacity: 0;
-  font-size: 24px;
-}
-
-@media (max-width: 480px) {
-  .slide:nth-of-type(4),
-  .slide:nth-of-type(5) {
-    display: none;
-  }
-}
-
-/* JavaScript */
-.slide.active {
-  flex: 5;
-}
-
-.slide.active h3 {
-  opacity: 1;
-  transition: opacity 0.3s ease-in 0.4s;
-}
