@@ -1,11 +1,16 @@
-let cards = document.querySelectorAll(".panel");
-let previous = document.querySelector(".active");
+//your JS code here. If required.
+let panels=document.querySelectorAll(".panel");
 
-for (let card of cards) {
-    card.addEventListener("mouseover", (e) => {
-        console.log(`Previous panel: ${previous.querySelector('.img-text').innerText}`);
-        previous.className = "panel";
-        card.className = "panel active";
-        previous = card;
-    });
+function onClickToggle(e) {
+
+	for(let i=0;i<panels.length;i++){
+	
+		panels[i].classList.remove("active")
+	
+	}
+		
+		
+			e.classList.add("active");
+			
+			
 }
