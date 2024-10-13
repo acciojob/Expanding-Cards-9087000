@@ -1,14 +1,14 @@
-//your JS code here. If required.
-//your JS code here. If required.
-function expandCard(panelId) {
-    const panels = document.querySelectorAll('.panel');
+const panels = document.querySelectorAll('.panel')
+
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+function removeActiveClasses() {
     panels.forEach(panel => {
-        if (panel.id === panelId) {
-            panel.classList.toggle('active');
-            panel.classList.toggle('expanding');
-        } else {
-            panel.classList.remove('active');
-            panel.classList.remove('expanding');
-        }
-    });
+        panel.classList.remove('active')
+    })
 }
