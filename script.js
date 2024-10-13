@@ -1,20 +1,14 @@
 //your JS code here. If required.
-let panels=document.querySelectorAll(".panel");
-
-// for(let i=0;i<panels.length;i++){
-// 	panels[i].addEventListener("click", onClickToggle)
-// }
-
-function onClickToggle(e) {
-
-	for(let i=0;i<panels.length;i++){
-	
-		panels[i].classList.remove("active")
-	
-	}
-		
-		
-			e.classList.add("active");
-			
-			
+//your JS code here. If required.
+function expandCard(panelId) {
+    const panels = document.querySelectorAll('.panel');
+    panels.forEach(panel => {
+        if (panel.id === panelId) {
+            panel.classList.toggle('active');
+            panel.classList.toggle('expanding');
+        } else {
+            panel.classList.remove('active');
+            panel.classList.remove('expanding');
+        }
+    });
 }
