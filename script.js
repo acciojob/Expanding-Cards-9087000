@@ -1,16 +1,16 @@
 //your JS code here. If required.
-let panels=document.querySelectorAll(".panel");
 
-function onClickToggle(e) {
+const panels = document.querySelectorAll(".panel")
 
-	for(let i=0;i<panels.length;i++){
-	
-		panels[i].classList.remove("active")
-	
-	}
-		
-		
-			e.classList.add("active");
-			
-			
+function removeActive() {
+	 panels.forEach(panel => {
+		 panel.classList.remove("active")
+	 })
 }
+    panels.forEach(panel => {
+		panel.addEventListener("click",()=>{
+			removeActive()
+		panel.classList.add("active")
+		})
+		
+	})
