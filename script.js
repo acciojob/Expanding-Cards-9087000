@@ -1,11 +1,18 @@
-let cards = document.querySelectorAll(".panel");
-let previous = document.querySelector(".active");
+//your JS code here. If required.
+// Get all the panels
+const panels = document.querySelectorAll('.panel');
 
-for (let card of cards) {
-    card.addEventListener("mouseover", (e) => {
-        console.log(`Previous panel: ${previous.querySelector('.img-text').innerText}`);
-        previous.className = "panel";
-        card.className = "panel active";
-        previous = card;
-    });
+// Function to remove 'active' class from all panels
+function removeActiveClasses() {
+  panels.forEach(panel => {
+    panel.classList.remove('active');
+  });
 }
+
+// Add click event listener to each panel
+panels.forEach(panel => {
+  panel.addEventListener('click', () => {
+    removeActiveClasses();
+    panel.classList.add('active');
+  });
+});
